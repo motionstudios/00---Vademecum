@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.euromedice.vademecum" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Vademecum</name>
+    <name>Vademécum</name>
     <description>
-        Vademécum Fórmulas infantiles Mead & Johnson Nutrición
+        Vademécum Fórmulas infantiles Mead and Johnson Nutrición
     </description>
     <author email="joan.munso@euromedice.net" href="http://www.euromedice.net">
         Euromedice
