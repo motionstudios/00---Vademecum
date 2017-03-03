@@ -1,0 +1,41 @@
+
+<div id="logo-login"><img src="img/login-logo.png"></div>
+<ion-view title="Login" hide-nav-bar="true" id="page6">
+
+    <ion-content padding="true"  class="manual-ios-statusbar-padding fondo" ng-controller="ProtectedController3">
+
+        
+
+        <div class="caja-login">
+            <form id="login-form1" class="list" ng-controller="postController">
+
+                <ion-list id="login-list2">
+                    <label class="item item-input-login" id="login-input1">
+                        <input class="input-login" type="text" ng-model="txtNombre" placeholder="Nombre">
+                    </label>
+                    <label class="item item-input-login" id="login-input2">
+                        <input class="input-login" type="text" ng-model="txtEmail" placeholder="E-mail">
+                    </label>
+                    <label class = "item item-input item-select item-light" style="margin-top: 20px;">
+                        <div class = "input-label">
+                            País
+                        </div>
+
+                        <select ng-model="txtPais">
+                            <option ng-repeat="pais in paises" value="{{pais.id}}" >{{pais.caption}}</option>
+                        </select>
+
+                    </label>
+
+                </ion-list>
+
+                <div class="spacer" style="height: 20px;"></div>
+
+                <a id="login-button5" class="boton-login" ng-click="entrar()">Acceder</a>
+
+            </form>
+        </div>
+
+    </ion-content>
+    
+</ion-view><div id="pie-login"><div id="pie-login-logo"></div></div>

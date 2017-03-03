@@ -1,0 +1,38 @@
+<ion-side-menus enable-menu-with-back-views="true" expose-aside-when="(min-width:800px)">
+
+    <ion-side-menu-content enable-menu-with-back-views="true" ng-controller="ProtectedController2">
+        <ion-nav-bar class="bar-stable bar-calm">
+            <ion-nav-back-button></ion-nav-back-button>
+
+            <ion-nav-buttons side="right" >
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu21"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left" id="side-menu21" expose-aside-when="large" ng-controller="ProtectedController">
+        <div class="contenedor-logos">
+            <div id="logo-menu"><img src="img/logo-vademecum.png"></div>
+        </div>
+        <ion-content padding="false" class="side-menu-left has-header separacion">
+            <div class="item item-input-inset" style="border-color: #fff;">
+                <label class="item-input-wrapper">
+                    <input type="text" placeholder="Buscar"  ng-model="buscar">
+                </label>
+                <a  class="button button-small" href="#/menu/buscar/{{buscar}}" menu-close=""> Go! </a>
+            </div>
+            <ion-list id="menu-null" >
+
+                <ion-item ng-repeat="session in sessions" id="menu-list-item1 " ui-sref="menu.categoria({ id: {{session.id}} })" menu-close="" 
+                          class="item-icon-right" style="background-color: {{session.color}}; color:  #fff;"> {{session.caption}}  <i class="icon ion-ios-arrow-right"></i></ion-item>
+
+                
+                <ion-item id="menu-list-item3 "  class="item-icon-left" ng-controller="cambiarPais" ng-click="openModal()"><i class="icon ion-ios-person-outline" ></i> <b>{{nombre}}</b><br> <h4>{{nombrePais}} - Cambiar país</h4></ion-item>   
+                <ion-item id="menu-list-item3 " ui-sref="cerrar" menu-close="" class="item-icon-left" ><i class="icon ion-ios-upload-outline" ></i> Cerrar sesión</ion-item>          
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>

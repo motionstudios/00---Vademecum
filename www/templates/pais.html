@@ -1,0 +1,54 @@
+<ion-modal-view id="modal-grande">
+
+
+
+    <ion-header-bar class="bar bar-calm">
+        <h1 class="title">Cambiar País</h1>
+        <button class="button button-icon icon-left ion-ios-close-outline button-primary" ng-click="closeModal()"></button>
+    </ion-header-bar>
+
+    <ion-content class=" fondo-color">
+
+
+        <div class="caja-login" style="margin-top: 20px; height: 280px;">
+            <form id="login-form1" class="list" ng-controller="postController3">
+
+                <ion-list id="login-list2">
+                    <label class="item item-input-login" id="login-input1">
+                        <input class="input-login" type="text"  placeholder="Nombre" ng-model="nombre_modal"  value="{{nombre_modal}}">
+                    </label>
+                    <label class="item item-input-login" id="login-input2">
+                        <input class="input-login" type="text"  placeholder="E-mail" ng-model="email_modal" value="{{email_modal}}">
+                    </label>
+                    <label class = "item item-input item-select item-light" style="margin-top: 20px;" >
+                        <div class = "input-label">
+                            País
+                        </div>
+
+                        <select ng-model="pais_modal">
+                            <option ng-repeat="pais in paises1" value="{{pais.id}}"   ng-selected="{{pais.id == pais_modal}}">{{pais.caption}}</option>
+                        </select>
+                        
+                    </label>
+                    <input name="id" type="hidden" ng-model="id_modal" value="{{id_modal}}">
+                </ion-list>
+                
+
+                <div class="spacer" style="height: 20px;"></div>
+
+                <a id="login-button5" class="boton-login" ng-click="actualizar()">Actualizar</a>
+
+            </form>
+        </div>
+
+        <div class="card">
+            <div class="item item-text-wrap">
+                <h4><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique vehicula erat non interdum. Vestibulum eget blandit nibh. Aliquam aliquam odio ac ligula sollicitudin, in dignissim nisl facilisis. Duis ac eros diam. Nam consequat malesuada lectus nec condimentum. Suspendisse molestie vel nibh viverra luctus. Integer ut feugiat lectus. Phasellus maximus malesuada orci, a aliquam nulla aliquam in. Sed interdum aliquam urna at faucibus. Aliquam pulvinar lorem nec est rhoncus, a imperdiet nibh condimentum. Phasellus sed auctor velit. Sed efficitur accumsan ante, ac pulvinar orci lacinia ac. Maecenas consequat mauris id ante dignissim fringilla. Suspendisse lacus erat, tincidunt ac quam in, ultrices convallis est. Ut molestie viverra massa, sed rhoncus felis vestibulum sed.</h4>
+            </div>
+        </div>
+
+
+    </ion-content>
+
+
+</ion-modal-view>

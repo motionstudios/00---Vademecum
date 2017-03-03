@@ -1,0 +1,31 @@
+<ion-view title="Detalle" id="page2"  >
+
+
+    <ion-content padding="false" class="has-header fondo-color" scroller>
+
+        <div class="spacer" style="width: 300px; height: 0px;"></div>
+        <div >
+            <img style="width: 100%;" image-lazy-src="{{img}}" image-lazy-loader="ios" image-lazy-loaded-class="fadeIn">
+        </div>
+
+        <div class="item item-divider" style="background-color: {{color_1}}; color:  #fff; font-size: 24px; line-height: 1.2; text-align: center; margin-top: -5px;">
+            {{caption}}
+        </div>
+        <div class='contenido'>
+            <p ng-bind-html="details"></p>
+        </div>
+ 
+    </ion-content>
+
+    <div class="tabs tabs-icon-top" style="opacity: 1; background-color: #CEBB8C; border-color: #CEBB8C; color: #fff;">
+
+        <a class="tab-item"  ng-href="{{pdf}}" onclick="window.open(this.href, '_system', 'location=yes'); return false;">
+            <i class="icon ion-ios-cloud-download" style="color: #fff;"></i>
+            Descargar PDF
+        </a>
+
+    </div>
+
+
+</ion-view>
+
