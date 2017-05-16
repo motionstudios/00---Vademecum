@@ -13,29 +13,14 @@
             </div>
 
             <ion-item ng-repeat="session in sessions" id="menu-list-item1 " href="#/menu/detalle/{{session.id}}/{{id}}"
-                      class="item-icon-right" style="background-color:  transparent;"> {{session.caption}}  <i class="icon ion-ios-arrow-right"></i></ion-item>
-
-        </div>
- 
-        <div class="card">
-            <div class="item item-text-wrap">
-                <h4><b>La leche materna es el mejor alimento para el lactante.</b> Las mujeres
-                    embarazadas y madres recientes deben recibir información sobre los beneficios
-                    y la superioridad de la leche materna. Se debe orientar a las madres en cuanto
-                    a la nutrición materna adecuada y advertirles que la decisión de evitar o
-                    interrumpir la lactancia materna puede resultar difícil de revertir. La alimentación
-                    parcial con preparaciones puede dificultar el comienzo de la lactancia materna.
-                    Debe aconsejarse a las madres acerca de las implicaciones de costo de las
-                    preparaciones para lactantes y de la importancia que tiene para la salud de los
-                    mismos que estas se preparen y utilicen correctamente.<br><br>
-                    La leche materna es ideal para alimentar a los bebés. Este producto no sustituye a
-                    la leche materna, sólo utilícelo bajo prescripción médica.<br><br>
-                    Las fórmulas en polvo para lactantes no son estériles y no deben ser administradas
-                    a bebés prematuros o que puedan tener problemas de inmunidad, salvo con
-                    dirección y supervisión del médico.</h4>
-            </div>
+                      class="item-icon-right" style="background-color:  transparent;"><div ng-bind-html="session.caption"></div> <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+           
         </div>
         
+        <div class='contenido'>
+            <p ng-bind-html="details"></p>
+        </div>
 
 
     </ion-content>

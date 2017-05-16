@@ -4,12 +4,14 @@
 
     <ion-content padding="true"  class="manual-ios-statusbar-padding fondo" ng-controller="ProtectedController3">
 
-        
-
         <div class="caja-login">
             <form id="login-form1" class="list" ng-controller="postController">
 
                 <ion-list id="login-list2">
+                    <div style="color: #8A5D39; text-align: center; margin-top: 10px; margin-bottom: 0px;">Introduce el ID, tu nombre, e-mail y selecciona país</div>
+                    <label class="item item-input-login" id="login-input1">
+                        <input class="input-login" type="text" ng-model="txtID" placeholder="ID">
+                    </label>
                     <label class="item item-input-login" id="login-input1">
                         <input class="input-login" type="text" ng-model="txtNombre" placeholder="Nombre">
                     </label>
@@ -29,13 +31,25 @@
 
                 </ion-list>
 
-                <div class="spacer" style="height: 20px;"></div>
+                <div class="spacer" style="height: 10px; "></div>
 
-                <a id="login-button5" class="boton-login" ng-click="entrar()">Acceder</a>
+                <li class="item item-toggle item-checkbox1" style="border: none; padding-left: 0px; background-color: rgba(0, 0, 0, 0); pointer-events: inherit;">
+                    <h5 style="color: #8A5D39; text-align: left; margin-left: 5px; font-size: 11px;">He leído y acepto los <a onclick="window.open('https://www.vademecumj.com/app/templates/terminos.html', '_blank', 'location=yes')" style="text-decoration:underline; color: #8A5D39">términos y condiciones</a></h5>
+                    <label class="toggle toggle">
+                        <input type="checkbox" ng-model="toggleModel.value1" ng-true-value="1" ng-false-value="0">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <div class="spacer" style="height: 0px;"></div>
+
+                <a id="login-button5" class="boton-login" ng-click="entrar()" ng-show="toggleModel.value1">Acceder</a>
+                <a id="login-button5" class="boton-login" style="opacity: 0.3;" ng-hide="toggleModel.value1">Acceder</a>
 
             </form>
         </div>
 
     </ion-content>
-    
+
 </ion-view><div id="pie-login"><div id="pie-login-logo"></div></div>
