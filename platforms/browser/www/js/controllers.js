@@ -14,7 +14,7 @@ angular.module('app.controllers', [])
             /* Carga los paises al Select del registro */
             $http.get($URL + 'rest/categorias.php?parent_id=0').success(function (data) {
                 $scope.paises = data;
-                $scope.countSelected = $scope.paises[0].id; 
+                $scope.countSelected = $scope.paises[0].id;
                 console.log(data);
             });
 
@@ -116,6 +116,20 @@ angular.module('app.controllers', [])
             }
         ])
 
+        .controller('disclaimerCtrl', ['$scope', '$stateParams', '$location', '$ionicScrollDelegate',
+            function ($scope, $stateParams, $location, $ionicScrollDelegate) {
+                $scope.verLogin = function () {
+                    $scope.verCaja = true;
+
+                    $location.hash('top');   //set the location hash
+                    var handle = $ionicScrollDelegate.$getByHandle('myPageDelegate');
+                    handle.resize(); 
+                    handle.anchorScroll(true);  // 'true' for animation
+                    
+                }
+
+            }])
+
 
         .controller('homeCtrl', ['$scope', '$stateParams',
             function ($scope, $stateParams) {
@@ -180,7 +194,7 @@ angular.module('app.controllers', [])
             }])
         /* BÚSQUEDA  PRODUCTOS  *******/
         .controller('buscarCtrl', ['$scope', '$http', '$stateParams', '$ionicLoading', function ($scope, $http, $stateParams, $ionicLoading) {
-                
+
                 $ionicLoading.show({
                     content: 'Loading',
                     animation: 'fade-in',
@@ -203,7 +217,7 @@ angular.module('app.controllers', [])
             }])
         /* PRODUCTOS DETALLE *******/
         .controller('detalleCtrl', ['$scope', '$http', '$stateParams', '$ionicLoading', function ($scope, $http, $stateParams, $ionicLoading) {
-                
+
                 $ionicLoading.show({
                     content: 'Loading',
                     animation: 'fade-in',

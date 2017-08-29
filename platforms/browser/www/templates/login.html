@@ -1,55 +1,94 @@
 
-<div id="logo-login"><img src="img/login-logo.png"></div>
-<ion-view title="Login" hide-nav-bar="true" id="page6">
+<div id="logo-login" id="top"><img src="img/login-logo.png"></div>
 
-    <ion-content padding="true"  class="manual-ios-statusbar-padding fondo" ng-controller="ProtectedController3">
+<ion-view title="Login" hide-nav-bar="true" id="page6" >
 
-        <div class="caja-login">
-            <form id="login-form1" class="list" ng-controller="postController">
+    <ion-content padding="true"  class="manual-ios-statusbar-padding fondo" ng-controller="ProtectedController3" delegate-handle="myPageDelegate">
+        <div ng-controller="disclaimerCtrl" >
 
-                <ion-list id="login-list2">
-                    <div style="color: #8A5D39; text-align: center; margin-top: 10px; margin-bottom: 0px;">Introduce el ID, tu nombre, e-mail y selecciona país</div>
-                    <label class="item item-input-login" id="login-input1">
-                        <input class="input-login" type="text" ng-model="txtID" placeholder="ID">
-                    </label>
-                    <label class="item item-input-login" id="login-input1">
-                        <input class="input-login" type="text" ng-model="txtNombre" placeholder="Nombre">
-                    </label>
-                    <label class="item item-input-login" id="login-input2">
-                        <input class="input-login" type="text" ng-model="txtEmail" placeholder="E-mail">
-                    </label>
-                    <label class = "item item-input item-select item-light" style="margin-top: 20px;">
-                        <div class = "input-label">
-                            País
-                        </div>
+            <div class="caja-login" style="margin-bottom: 100px;" ng-if="verCaja == true" >
 
-                        <select ng-model="txtPais">
-                            <option ng-repeat="pais in paises" value="{{pais.id}}" >{{pais.caption}}</option>
-                        </select>
+                <form id="login-form1" class="list" ng-controller="postController" >
 
-                    </label>
+                    <ion-list id="login-list2">
+                        <div style="color: #8A5D39; text-align: center; margin-top: 10px; margin-bottom: 0px;">Introduce el ID, tu nombre, e-mail y selecciona país</div>
+                        <label class="item item-input-login" id="login-input1">
+                            <input class="input-login" type="text" ng-model="txtID" placeholder="ID">
+                        </label>
+                        <label class="item item-input-login" id="login-input1">
+                            <input class="input-login" type="text" ng-model="txtNombre" placeholder="Nombre">
+                        </label>
+                        <label class="item item-input-login" id="login-input2">
+                            <input class="input-login" type="text" ng-model="txtEmail" placeholder="E-mail">
+                        </label>
+                        <label class = "item item-input item-select item-light" style="margin-top: 20px;">
+                            <div class = "input-label">
+                                País
+                            </div>
 
-                </ion-list>
+                            <select ng-model="txtPais">
+                                <option ng-repeat="pais in paises" value="{{pais.id}}" >{{pais.caption}}</option>
+                            </select>
 
-                <div class="spacer" style="height: 10px; "></div>
+                        </label>
 
-                <li class="item item-toggle item-checkbox1" style="border: none; padding-left: 0px; background-color: rgba(0, 0, 0, 0); pointer-events: inherit;">
-                    <h5 style="color: #8A5D39; text-align: left; margin-left: 5px; font-size: 11px;">He leído y acepto los <a onclick="window.open('https://www.vademecumj.com/app/templates/terminos.html', '_blank', 'location=yes')" style="text-decoration:underline; color: #8A5D39">términos y condiciones</a></h5>
-                    <label class="toggle toggle">
-                        <input type="checkbox" ng-model="toggleModel.value1" ng-true-value="1" ng-false-value="0">
-                        <div class="track">
-                            <div class="handle"></div>
-                        </div>
-                    </label>
-                </li>
-                <div class="spacer" style="height: 0px;"></div>
+                    </ion-list>
 
-                <a id="login-button5" class="boton-login" ng-click="entrar()" ng-show="toggleModel.value1">Acceder</a>
-                <a id="login-button5" class="boton-login" style="opacity: 0.3;" ng-hide="toggleModel.value1">Acceder</a>
+                    <div class="spacer" style="height: 10px; "></div>
 
-            </form>
+                    <li class="item item-toggle item-checkbox1" style="border: none; padding-left: 0px; background-color: rgba(0, 0, 0, 0); pointer-events: inherit;">
+                        <h5 style="color: #8A5D39; text-align: left; margin-left: 5px; font-size: 11px;">He leído y acepto los <a onclick="window.open('https://www.vademecumj.com/app/templates/terminos.html', '_blank', 'location=yes')" style="text-decoration:underline; color: #8A5D39">términos y condiciones</a></h5>
+                        <label class="toggle toggle">
+                            <input type="checkbox" ng-model="toggleModel.value1" ng-true-value="1" ng-false-value="0">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </li>
+                    <div class="spacer" style="height: 0px;"></div>
+
+                    <a id="login-button5" class="boton-login" ng-click="entrar()" ng-show="toggleModel.value1">Acceder</a>
+                    <a id="login-button5" class="boton-login" style="opacity: 0.3;" ng-hide="toggleModel.value1">Acceder</a>
+
+                </form>
+            </div>
+
+            <div id="discraimer"  ng-if="verCaja != true"> 
+                <div>
+                    <p>Estimado profesional de la salud,<br><br>
+                        La información y/o materiales incluidos en este sitio web son para uso exclusivo para profesionales de la salud. El contenido brinda información general respecto de los productos de Mead Johnson en su país y se encuentra sujeto a actualizaciones periódicas, mismas que en su caso serán publicadas a través de este mismo medio.
+                        Para mayor información, por favor contacte a su representante médico local. <br><br>
+                        Al ingresar sus datos y aceptar inscribirse en la plataforma, usted declara bajo protesta de decir verdad que:<br><br>
+                        1. Es un profesional de la salud, facultado para ejercer, prescribir o dispensar medicamentos según las leyes y regulaciones vigentes y aplicables en su país;<br>
+                        2. Comprende que la información incluida en este sitio web se encuentra exclusivamente destinada a satisfacer la necesidad de los profesionales de la salud de contar con mayor información para un uso adecuado de los productos y en su caso, la prescripción de los mismos.
+                    </p>
+
+                    <ul class="list">
+                        <li class="item item-toggle" style="border: none; text-align: right; ">
+                            <h3 style="color: #6B3300;">Aceptar</h3>
+                            <label class="toggle toggle" >
+                                <input type="checkbox" ng-model="toggleModel.value2" ng-true-value="1" ng-false-value="0">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <div style="text-align:  center;">
+                        <div class="spacer" style="height: 0px;"></div>
+
+                        <a id="login-button5" class="boton-login" ng-click="verLogin()" ng-show="toggleModel.value2">Registrarse</a>
+                        <a id="login-button5" class="boton-login" style="opacity: 0.3;" ng-hide="toggleModel.value2">Registrarse</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </ion-content>
 
-</ion-view><div id="pie-login"><div id="pie-login-logo"></div></div>
+</ion-view>
+
+<div id="pie-login">
+    <div id="pie-login-logo"></div>
+</div>
