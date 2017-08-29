@@ -3,7 +3,7 @@ angular.module('app.controllers', [])
         .controller('cargaCtrl', ['$scope', '$stateParams',
             function ($scope, $stateParams) {
                 // variable general de la URL
-                $URL = 'http://vademecummj.prod.euromedice.net/';
+                $URL = 'https://www.vademecumj.com/';
                 //$URL = 'http://localhost/16-015_vademecum/';
 
             }])
@@ -14,6 +14,7 @@ angular.module('app.controllers', [])
             /* Carga los paises al Select del registro */
             $http.get($URL + 'rest/categorias.php?parent_id=0').success(function (data) {
                 $scope.paises = data;
+                $scope.countSelected = $scope.paises[0].id; 
                 console.log(data);
             });
 
@@ -34,7 +35,7 @@ angular.module('app.controllers', [])
                     headers: {
                         'Content-Type': undefined
                     },
-                    data: {nombre: $scope.txtNombre, email: $scope.txtEmail, pais: $scope.txtPais},
+                    data: {id: $scope.txtID, nombre: $scope.txtNombre, email: $scope.txtEmail, pais: $scope.txtPais},
                     dataType: "jsonp"
                 }
 
@@ -164,6 +165,7 @@ angular.module('app.controllers', [])
                     $scope.titulo = data1[0].caption;
                     $scope.color = data1[0].color;
                     $scope.img = data1[0].img;
+                    $scope.details = data1[0].details;
                     console.log(data1);
 
                 });

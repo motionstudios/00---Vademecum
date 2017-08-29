@@ -11,7 +11,7 @@
             </div>
 
             <ion-item ng-hide="{{sessions3 == 0}}" ng-repeat="session in sessions3" id="menu-list-item1 " href="#/menu/detalle/{{session.id}}/{{session.parent_id}}"
-                      class="item-icon-right" style="background-color:  transparent;"> {{session.caption}}  <i class="icon ion-ios-arrow-right"></i>
+                      class="item-icon-right" style="background-color:  transparent;"> <div ng-bind-html="session.caption"></div>  <i class="icon ion-ios-arrow-right"></i>
             </ion-item>
             
             

@@ -35,6 +35,9 @@
         background-size: 100%;
 
     }
+    #imagen_detalle img{
+        max-height: 500px !important;
+    }
 }
 
 @media screen and (min-width:750px){ 
@@ -48,11 +51,15 @@
         margin-right: auto;
 
     }
-        .contenido img {
+    .contenido img {
         width: 500px !important;
         display:block;
         margin:0 auto 0 auto;
 
+    }
+    #discraimer {
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }
@@ -60,7 +67,7 @@
 
 
     .buttons-right {
-         visibility:  hidden;
+        visibility:  hidden;
     }
 
 }
